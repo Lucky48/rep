@@ -1,0 +1,32 @@
+try:
+    tickets = int(input("Введите количество человек "))
+except ValueError:
+    print("Необходимо ввести целое число")
+else:
+
+    t = tickets
+    i = t
+    age = 0
+    summ = 0
+
+    if t > 0:
+        while i > 0:
+            age = int(input("\nВведите возраст посетителя "))
+            if age < 18:
+                i = i-1
+            elif 18 <= age <= 25:
+                summ = summ+990
+                i = i-1
+            else:
+                summ = summ+1390
+                i = i-1
+        else:
+            if t > 3:
+                summ = summ * 0.9
+                print("\nС учётом скидки сумма к оплате составляет:",summ,"руб.")
+                print("Будем рады вас видеть!")
+            else:
+                print("\nСумма к оплате составляет:",summ,"руб.")
+                print("Будем рады вас видеть!")
+    else:
+        print("Необходимо ввести целое число\nНажмите любую клавишу, чтобы выйти")
